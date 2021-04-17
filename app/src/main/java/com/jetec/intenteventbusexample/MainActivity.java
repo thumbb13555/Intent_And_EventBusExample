@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
         btEventIntent = findViewById(R.id.button_IntentByEvent);
         btTest = findViewById(R.id.button_Test);
         EditText editText = findViewById(R.id.editText);
-
         /**以普通的Intent帶資料傳送*/
         btIntent.setOnClickListener((v) -> {
             new Thread(() -> {
@@ -55,8 +54,6 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
                 });
             }).start();
-
-
         });
         /**測試EventBus在同一個Activity內的效果*/
         btTest.setOnClickListener(v -> {
@@ -71,7 +68,6 @@ public class MainActivity extends AppCompatActivity {
             }).start();
         });
     }
-
     /**
      * 統一製作陣列
      */
@@ -101,6 +97,4 @@ public class MainActivity extends AppCompatActivity {
     public void getEvent(GetEvent event) {
         Toast.makeText(this, "陣列長度：" + event.getArrayList().size(), Toast.LENGTH_SHORT).show();
     }
-
-
 }
